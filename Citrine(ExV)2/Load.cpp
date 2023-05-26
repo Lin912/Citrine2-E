@@ -16,19 +16,17 @@ Load::Load(VectorXd& arr, VectorXd& brr)
     Yold = arr;
     Ynew = brr;
 
-    // cout << "Read in Yold And Ynew !!" << endl;
 }
 
 Load::~Load()
 {
-    // cout << "Load done! Time to get Iteration !!" << endl;
 
 }
 
 VectorXd Load::LF(int k)
 {
     Fx A(Yold, Ynew);
-    return A.fx(k);//读入两个向量并设置f(x)
+    return A.fx(k);
 
 
 }
@@ -36,6 +34,6 @@ VectorXd Load::LF(int k)
 MatrixXd Load::LJ(int k)
 {
     Jacobian A(Yold, Ynew);
-    return A.jacobian(k);//读入两个向量并设置Jacobi
+    return A.jacobian(k);
     
 }

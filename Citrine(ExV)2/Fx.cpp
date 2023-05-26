@@ -369,10 +369,10 @@ VectorXd Fx::fx(int k)
     MatrixXd M46new(10, 10);
     MatrixXd M47new(10, 10);
     MatrixXd M48new(10, 10);
-    MatrixXd M49new(10, 10);//矩阵分块
+    MatrixXd M49new(10, 10);
 
 
-    M0old = AA.Mold().block(0, 0, 10, 10);//分块赋值
+    M0old = AA.Mold().block(0, 0, 10, 10);
     M1old = AA.Mold().block(10, 10, 10, 10);
     M2old = AA.Mold().block(20, 20, 10, 10);
     M3old = AA.Mold().block(30, 30, 10, 10);
@@ -382,7 +382,7 @@ VectorXd Fx::fx(int k)
     M7old = AA.Mold().block(70, 70, 10, 10);
     M8old = AA.Mold().block(80, 80, 10, 10);
     M9old = AA.Mold().block(90, 90, 10, 10);
-    M10old = AA.Mold().block(100, 100, 10, 10);//分块赋值
+    M10old = AA.Mold().block(100, 100, 10, 10);
     M11old = AA.Mold().block(110, 110, 10, 10);
     M12old = AA.Mold().block(120, 120, 10, 10);
     M13old = AA.Mold().block(130, 130, 10, 10);
@@ -392,7 +392,7 @@ VectorXd Fx::fx(int k)
     M17old = AA.Mold().block(170, 170, 10, 10);
     M18old = AA.Mold().block(180, 180, 10, 10);
     M19old = AA.Mold().block(190, 190, 10, 10);
-    M20old = AA.Mold().block(200, 200, 10, 10);//分块赋值
+    M20old = AA.Mold().block(200, 200, 10, 10);
     M21old = AA.Mold().block(210, 210, 10, 10);
     M22old = AA.Mold().block(220, 220, 10, 10);
     M23old = AA.Mold().block(230, 230, 10, 10);
@@ -402,7 +402,7 @@ VectorXd Fx::fx(int k)
     M27old = AA.Mold().block(270, 270, 10, 10);
     M28old = AA.Mold().block(280, 280, 10, 10);
     M29old = AA.Mold().block(290, 290, 10, 10);
-    M30old = AA.Mold().block(300, 300, 10, 10);//分块赋值
+    M30old = AA.Mold().block(300, 300, 10, 10);
     M31old = AA.Mold().block(310, 310, 10, 10);
     M32old = AA.Mold().block(320, 320, 10, 10);
     M33old = AA.Mold().block(330, 330, 10, 10);
@@ -412,7 +412,7 @@ VectorXd Fx::fx(int k)
     M37old = AA.Mold().block(370, 370, 10, 10);
     M38old = AA.Mold().block(380, 380, 10, 10);
     M39old = AA.Mold().block(390, 390, 10, 10);
-    M40old = AA.Mold().block(400, 400, 10, 10);//分块赋值
+    M40old = AA.Mold().block(400, 400, 10, 10);
     M41old = AA.Mold().block(410, 410, 10, 10);
     M42old = AA.Mold().block(420, 420, 10, 10);
     M43old = AA.Mold().block(430, 430, 10, 10);
@@ -424,7 +424,7 @@ VectorXd Fx::fx(int k)
     M49old = AA.Mold().block(490, 490, 10, 10);
 
 
-    M0new = AA.Mnew().block(0, 0, 10, 10);//分块赋值
+    M0new = AA.Mnew().block(0, 0, 10, 10);
     M1new = AA.Mnew().block(10, 10, 10, 10);
     M2new = AA.Mnew().block(20, 20, 10, 10);
     M3new = AA.Mnew().block(30, 30, 10, 10);
@@ -434,7 +434,7 @@ VectorXd Fx::fx(int k)
     M7new = AA.Mnew().block(70, 70, 10, 10);
     M8new = AA.Mnew().block(80, 80, 10, 10);
     M9new = AA.Mnew().block(90, 90, 10, 10);
-    M10new = AA.Mnew().block(100, 100, 10, 10);//分块赋值
+    M10new = AA.Mnew().block(100, 100, 10, 10);
     M11new = AA.Mnew().block(110, 110, 10, 10);
     M12new = AA.Mnew().block(120, 120, 10, 10);
     M13new = AA.Mnew().block(130, 130, 10, 10);
@@ -444,7 +444,7 @@ VectorXd Fx::fx(int k)
     M17new = AA.Mnew().block(170, 170, 10, 10);
     M18new = AA.Mnew().block(180, 180, 10, 10);
     M19new = AA.Mnew().block(190, 190, 10, 10);
-    M20new = AA.Mnew().block(200, 200, 10, 10);//分块赋值
+    M20new = AA.Mnew().block(200, 200, 10, 10);
     M21new = AA.Mnew().block(210, 210, 10, 10);
     M22new = AA.Mnew().block(220, 220, 10, 10);
     M23new = AA.Mnew().block(230, 230, 10, 10);
@@ -454,7 +454,7 @@ VectorXd Fx::fx(int k)
     M27new = AA.Mnew().block(270, 270, 10, 10);
     M28new = AA.Mnew().block(280, 280, 10, 10);
     M29new = AA.Mnew().block(290, 290, 10, 10);
-    M30new = AA.Mnew().block(300, 300, 10, 10);//分块赋值
+    M30new = AA.Mnew().block(300, 300, 10, 10);
     M31new = AA.Mnew().block(310, 310, 10, 10);
     M32new = AA.Mnew().block(320, 320, 10, 10);
     M33new = AA.Mnew().block(330, 330, 10, 10);
@@ -464,7 +464,7 @@ VectorXd Fx::fx(int k)
     M37new = AA.Mnew().block(370, 370, 10, 10);
     M38new = AA.Mnew().block(380, 380, 10, 10);
     M39new = AA.Mnew().block(390, 390, 10, 10);
-    M40new = AA.Mnew().block(400, 400, 10, 10);//分块赋值
+    M40new = AA.Mnew().block(400, 400, 10, 10);
     M41new = AA.Mnew().block(410, 410, 10, 10);
     M42new = AA.Mnew().block(420, 420, 10, 10);
     M43new = AA.Mnew().block(430, 430, 10, 10);
@@ -538,7 +538,7 @@ VectorXd Fx::fx(int k)
     MatrixXd N6new(10, 10);
     MatrixXd N7new(10, 10);
     MatrixXd N8new(10, 10);
-    MatrixXd N9new(10, 10);//矩阵分块
+    MatrixXd N9new(10, 10);
     MatrixXd N10new(10, 10);
     MatrixXd N11new(10, 10);
     MatrixXd N12new(10, 10);
@@ -548,7 +548,7 @@ VectorXd Fx::fx(int k)
     MatrixXd N16new(10, 10);
     MatrixXd N17new(10, 10);
     MatrixXd N18new(10, 10);
-    MatrixXd N19new(10, 10);//矩阵分块
+    MatrixXd N19new(10, 10);
     MatrixXd N20new(10, 10);
     MatrixXd N21new(10, 10);
     MatrixXd N22new(10, 10);
@@ -558,7 +558,7 @@ VectorXd Fx::fx(int k)
     MatrixXd N26new(10, 10);
     MatrixXd N27new(10, 10);
     MatrixXd N28new(10, 10);
-    MatrixXd N29new(10, 10);//矩阵分块
+    MatrixXd N29new(10, 10);
     MatrixXd N30new(10, 10);
     MatrixXd N31new(10, 10);
     MatrixXd N32new(10, 10);
@@ -568,7 +568,7 @@ VectorXd Fx::fx(int k)
     MatrixXd N36new(10, 10);
     MatrixXd N37new(10, 10);
     MatrixXd N38new(10, 10);
-    MatrixXd N39new(10, 10);//矩阵分块
+    MatrixXd N39new(10, 10);
     MatrixXd N40new(10, 10);
     MatrixXd N41new(10, 10);
     MatrixXd N42new(10, 10);
@@ -578,10 +578,10 @@ VectorXd Fx::fx(int k)
     MatrixXd N46new(10, 10);
     MatrixXd N47new(10, 10);
     MatrixXd N48new(10, 10);
-    MatrixXd N49new(10, 10);//矩阵分块
+    MatrixXd N49new(10, 10);
 
 
-    N0old = AA.Nold().block(0, 0, 10, 10);//分块赋值
+    N0old = AA.Nold().block(0, 0, 10, 10);
     N1old = AA.Nold().block(10, 10, 10, 10);
     N2old = AA.Nold().block(20, 20, 10, 10);
     N3old = AA.Nold().block(30, 30, 10, 10);
@@ -591,7 +591,7 @@ VectorXd Fx::fx(int k)
     N7old = AA.Nold().block(70, 70, 10, 10);
     N8old = AA.Nold().block(80, 80, 10, 10);
     N9old = AA.Nold().block(90, 90, 10, 10);
-    N10old = AA.Nold().block(100, 100, 10, 10);//分块赋值
+    N10old = AA.Nold().block(100, 100, 10, 10);
     N11old = AA.Nold().block(110, 110, 10, 10);
     N12old = AA.Nold().block(120, 120, 10, 10);
     N13old = AA.Nold().block(130, 130, 10, 10);
@@ -601,7 +601,7 @@ VectorXd Fx::fx(int k)
     N17old = AA.Nold().block(170, 170, 10, 10);
     N18old = AA.Nold().block(180, 180, 10, 10);
     N19old = AA.Nold().block(190, 190, 10, 10);
-    N20old = AA.Nold().block(200, 200, 10, 10);//分块赋值
+    N20old = AA.Nold().block(200, 200, 10, 10);
     N21old = AA.Nold().block(210, 210, 10, 10);
     N22old = AA.Nold().block(220, 220, 10, 10);
     N23old = AA.Nold().block(230, 230, 10, 10);
@@ -611,7 +611,7 @@ VectorXd Fx::fx(int k)
     N27old = AA.Nold().block(270, 270, 10, 10);
     N28old = AA.Nold().block(280, 280, 10, 10);
     N29old = AA.Nold().block(290, 290, 10, 10);
-    N30old = AA.Nold().block(300, 300, 10, 10);//分块赋值
+    N30old = AA.Nold().block(300, 300, 10, 10);
     N31old = AA.Nold().block(310, 310, 10, 10);
     N32old = AA.Nold().block(320, 320, 10, 10);
     N33old = AA.Nold().block(330, 330, 10, 10);
@@ -621,7 +621,7 @@ VectorXd Fx::fx(int k)
     N37old = AA.Nold().block(370, 370, 10, 10);
     N38old = AA.Nold().block(380, 380, 10, 10);
     N39old = AA.Nold().block(390, 390, 10, 10);
-    N40old = AA.Nold().block(400, 400, 10, 10);//分块赋值
+    N40old = AA.Nold().block(400, 400, 10, 10);
     N41old = AA.Nold().block(410, 410, 10, 10);
     N42old = AA.Nold().block(420, 420, 10, 10);
     N43old = AA.Nold().block(430, 430, 10, 10);
@@ -633,7 +633,7 @@ VectorXd Fx::fx(int k)
     N49old = AA.Nold().block(490, 490, 10, 10);
 
 
-    N0new = AA.Nnew().block(0, 0, 10, 10);//分块赋值
+    N0new = AA.Nnew().block(0, 0, 10, 10);
     N1new = AA.Nnew().block(10, 10, 10, 10);
     N2new = AA.Nnew().block(20, 20, 10, 10);
     N3new = AA.Nnew().block(30, 30, 10, 10);
@@ -643,7 +643,7 @@ VectorXd Fx::fx(int k)
     N7new = AA.Nnew().block(70, 70, 10, 10);
     N8new = AA.Nnew().block(80, 80, 10, 10);
     N9new = AA.Nnew().block(90, 90, 10, 10);
-    N10new = AA.Nnew().block(100, 100, 10, 10);//分块赋值
+    N10new = AA.Nnew().block(100, 100, 10, 10);
     N11new = AA.Nnew().block(110, 110, 10, 10);
     N12new = AA.Nnew().block(120, 120, 10, 10);
     N13new = AA.Nnew().block(130, 130, 10, 10);
@@ -653,7 +653,7 @@ VectorXd Fx::fx(int k)
     N17new = AA.Nnew().block(170, 170, 10, 10);
     N18new = AA.Nnew().block(180, 180, 10, 10);
     N19new = AA.Nnew().block(190, 190, 10, 10);
-    N20new = AA.Nnew().block(200, 200, 10, 10);//分块赋值
+    N20new = AA.Nnew().block(200, 200, 10, 10);
     N21new = AA.Nnew().block(210, 210, 10, 10);
     N22new = AA.Nnew().block(220, 220, 10, 10);
     N23new = AA.Nnew().block(230, 230, 10, 10);
@@ -663,7 +663,7 @@ VectorXd Fx::fx(int k)
     N27new = AA.Nnew().block(270, 270, 10, 10);
     N28new = AA.Nnew().block(280, 280, 10, 10);
     N29new = AA.Nnew().block(290, 290, 10, 10);
-    N30new = AA.Nnew().block(300, 300, 10, 10);//分块赋值
+    N30new = AA.Nnew().block(300, 300, 10, 10);
     N31new = AA.Nnew().block(310, 310, 10, 10);
     N32new = AA.Nnew().block(320, 320, 10, 10);
     N33new = AA.Nnew().block(330, 330, 10, 10);
@@ -673,7 +673,7 @@ VectorXd Fx::fx(int k)
     N37new = AA.Nnew().block(370, 370, 10, 10);
     N38new = AA.Nnew().block(380, 380, 10, 10);
     N39new = AA.Nnew().block(390, 390, 10, 10);
-    N40new = AA.Nnew().block(400, 400, 10, 10);//分块赋值
+    N40new = AA.Nnew().block(400, 400, 10, 10);
     N41new = AA.Nnew().block(410, 410, 10, 10);
     N42new = AA.Nnew().block(420, 420, 10, 10);
     N43new = AA.Nnew().block(430, 430, 10, 10);
@@ -892,9 +892,9 @@ VectorXd Fx::fx(int k)
     Q49new = AA.Qnew().tail(10);
 
 
-    VectorXd temp0(10);//0节点赋值
-    VectorXd temp1(10);//1节点赋值
-    VectorXd temp2(10);//2节点赋值
+    VectorXd temp0(10);
+    VectorXd temp1(10);
+    VectorXd temp2(10);
     VectorXd temp3(10);
     VectorXd temp4(10);
     VectorXd temp5(10);
@@ -902,9 +902,9 @@ VectorXd Fx::fx(int k)
     VectorXd temp7(10);
     VectorXd temp8(10);
     VectorXd temp9(10);
-    VectorXd temp10(10);//0节点赋值
-    VectorXd temp11(10);//1节点赋值
-    VectorXd temp12(10);//2节点赋值
+    VectorXd temp10(10);
+    VectorXd temp11(10);
+    VectorXd temp12(10);
     VectorXd temp13(10);
     VectorXd temp14(10);
     VectorXd temp15(10);
@@ -912,9 +912,9 @@ VectorXd Fx::fx(int k)
     VectorXd temp17(10);
     VectorXd temp18(10);
     VectorXd temp19(10);
-    VectorXd temp20(10);//0节点赋值
-    VectorXd temp21(10);//1节点赋值
-    VectorXd temp22(10);//2节点赋值
+    VectorXd temp20(10);
+    VectorXd temp21(10);
+    VectorXd temp22(10);
     VectorXd temp23(10);
     VectorXd temp24(10);
     VectorXd temp25(10);
@@ -922,9 +922,9 @@ VectorXd Fx::fx(int k)
     VectorXd temp27(10);
     VectorXd temp28(10);
     VectorXd temp29(10);
-    VectorXd temp30(10);//0节点赋值
-    VectorXd temp31(10);//1节点赋值
-    VectorXd temp32(10);//2节点赋值
+    VectorXd temp30(10);
+    VectorXd temp31(10);
+    VectorXd temp32(10);
     VectorXd temp33(10);
     VectorXd temp34(10);
     VectorXd temp35(10);
@@ -932,9 +932,9 @@ VectorXd Fx::fx(int k)
     VectorXd temp37(10);
     VectorXd temp38(10);
     VectorXd temp39(10);
-    VectorXd temp40(10);//0节点赋值
-    VectorXd temp41(10);//1节点赋值
-    VectorXd temp42(10);//2节点赋值
+    VectorXd temp40(10);
+    VectorXd temp41(10);
+    VectorXd temp42(10);
     VectorXd temp43(10);
     VectorXd temp44(10);
     VectorXd temp45(10);
@@ -944,7 +944,7 @@ VectorXd Fx::fx(int k)
     VectorXd temp49(10);
 
 
-    //temp(n) n为中间节点号
+    
     temp0 = ((N1new + N0new)*(Y1new - Y0new) * deltaT) + ((N1old + N0old)*(Y1old - Y0old) * deltaT) + ((M1new + M1old)*(Y1new - Y1old) * deltaS) + ((M0new + M0old)*(Y0new - Y0old) * deltaS) + (Q0old + Q1old + Q0new + Q1new) * (deltaT*deltaS);
     temp1 = ((N2new + N1new)*(Y2new - Y1new) * deltaT) + ((N2old + N1old)*(Y2old - Y1old) * deltaT) + ((M2new + M2old)*(Y2new - Y2old) * deltaS) + ((M1new + M1old)*(Y1new - Y1old) * deltaS) + (Q1old + Q2old + Q1new + Q2new) * (deltaT*deltaS);
     temp2 = ((N3new + N2new)*(Y3new - Y2new) * deltaT) + ((N3old + N2old)*(Y3old - Y2old) * deltaT) + ((M3new + M3old)*(Y3new - Y3old) * deltaS) + ((M2new + M2old)*(Y2new - Y2old) * deltaS) + (Q2old + Q3old + Q2new + Q3new) * (deltaT*deltaS);
@@ -1000,33 +1000,19 @@ VectorXd Fx::fx(int k)
     temp48 = ((N49new + N48new)*(Y49new - Y48new) * deltaT) + ((N49old + N48old)*(Y49old - Y48old) * deltaT) + ((M49new + M49old)*(Y49new - Y49old) * deltaS) + ((M48new + M48old)*(Y48new - Y48old) * deltaS) + (Q48old + Q49old + Q48new + Q49new) * (deltaT*deltaS);
 
 
-    //BC 边界条件
+    
     VectorXd BCtemp0(5);
     VectorXd BCtemp1(5);
-
-    //第一点(u, v, w, O2mega, O3mega)(V1 轴向; V2，V3均为水平方向)
     BCtemp0(0) = Y0new(0) - V1*cos(Y0new(7))*cos(Y0new(6)) - V2*sin(Y0new(6))*cos(Y0new(7)) -V3*sin(Y0new(7));
     BCtemp0(1) = Y0new(1) - V2*cos(Y0new(6)) + V1*sin(Y0new(6));
     BCtemp0(2) = Y0new(2) + V1*sin(Y0new(7))*cos(Y0new(6)) + V2*sin(Y0new(7))*sin(Y0new(6)) - V3*cos(Y0new(7));
     BCtemp0(3) = Y0new(8);
     BCtemp0(4) = Y0new(9);
-
-
-    //最后点(T, Sn, Sb, O2mega, O3mega)
-    // BCtemp1(0) = Y49new(3) + G*cos(Y49new(7))*cos(Y49new(6)) + 0.5*pi*Rho*d0*Cdt*Y49new(0)*abs(Y49new(0));
-    // BCtemp1(1) = Y49new(4) - G*sin(Y49new(6)) + 0.5*Rho*d0*Cdn*Y49new(1)*sqrt(pow(Y49new(1),2)+ pow(Y49new(2),2))+ ma*(Y49new(1)-Y49old(1))/deltaT;
-    // BCtemp1(2) = Y49new(5) - G*cos(Y49new(6))*sin(Y49new(7)) + 0.5*Rho*d0*Cdb*Y49new(2)*sqrt(pow(Y49new(1),2)+ pow(Y49new(2),2))+ ma*(Y49new(2)-Y49old(2))/deltaT;
-    // BCtemp1(3) = Y49new(8);
-    // BCtemp1(4) = Y49new(9);
-
-
     BCtemp1(0) = Y49new(3) + G*cos(Y49new(7))*cos(Y49new(6));
     BCtemp1(1) = Y49new(4) - G*sin(Y49new(6)) + 0.5*rho*Cdn*Sd*Y49new(1)*sqrt(pow(Y49new(1),2)+pow(Y49new(2),2));
     BCtemp1(2) = Y49new(5) - G*cos(Y49new(6))*sin(Y49new(7))+ 0.5*rho*Cdn*Sd*Y49new(2)*sqrt(pow(Y49new(1),2)+pow(Y49new(2),2));
     BCtemp1(3) = Y49new(8);
     BCtemp1(4) = Y49new(9);
-
-
 
     VectorXd ret(500);
     ret.head(5) = BCtemp0;

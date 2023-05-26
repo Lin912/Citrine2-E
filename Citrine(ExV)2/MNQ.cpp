@@ -20,7 +20,7 @@ MNQ::MNQ(VectorXd& arr, VectorXd& brr)
 
 MNQ::~MNQ()
 {
-    //  cout << "MNQ done !!" << endl;
+    
 }
 
 MatrixXd MNQ::Mold()
@@ -28,24 +28,23 @@ MatrixXd MNQ::Mold()
     EXf Ev;
     vector<double> arr; 
     arr = Ev.Val(1, "./Data./PhyChar.csv");
-	double A = arr[0];//截面面积 A
-	double rho = arr[1];//介质密度
-	double d0 = arr[2];//带缆直径 d0
-    double E = arr[3];//弹性模量 E
+	double A = arr[0];
+	double rho = arr[1];
+	double d0 = arr[2];
+    double E = arr[3];
 	double I = arr[4];
-    // double MNQ::Ip = 2.80e-7;
-    // double MNQ::G = 8.11e9;
+
 
     //数学特性
     double pi = arr[11];
     double g = arr.back();
 
     //质量特性
-    double M = arr[5];//质量 M = RhoCable*▽ = RhoCable*A*diameter(计算长度)
-    double ma = arr[6];//附加质量 ma = [(Cm*RhoWater*▽) + M]  此时Cm = 1.00
+    double M = arr[5];
+    double ma = arr[6];
     double Cdt = arr[7];
     double Cdn = arr[8];
-    double Cdb = arr[9];//待修改
+    double Cdb = arr[9];
 
     MatrixXd AA(500, 500);
     MatrixXd temp(500, 500);
@@ -80,24 +79,23 @@ MatrixXd MNQ::Mnew()
     EXf Ev;
     vector<double> arr; 
     arr = Ev.Val(1, "./Data./PhyChar.csv");
-	double A = arr[0];//截面面积 A
-	double rho = arr[1];//介质密度
-	double d0 = arr[2];//带缆直径 d0
-    double E = arr[3];//弹性模量 E
+	double A = arr[0];
+	double rho = arr[1];
+	double d0 = arr[2];
+    double E = arr[3];
 	double I = arr[4];
-    // double MNQ::Ip = 2.80e-7;
-    // double MNQ::G = 8.11e9;
+   
 
     //数学特性
     double pi = arr[11];
     double g = arr.back();
 
     //质量特性
-    double M = arr[5];//质量 M = Rhocable*A
-    double ma = arr[6];//附加质量 ma = rho*A*(Cm)  此时Cm = 1.00
+    double M = arr[5];
+    double ma = arr[6];
     double Cdt = arr[7];
     double Cdn = arr[8];
-    double Cdb = arr[9];//待修改
+    double Cdb = arr[9];
 
 
     MatrixXd AA(500, 500);
@@ -125,7 +123,6 @@ MatrixXd MNQ::Mnew()
         temp(10*i + 7, 10*i + 7) = Ynew(i*10 + 3)/(A*E) + 1;
     }
 
-    // savetxt(temp, "./Data./Mnew.txt");
 
     return temp;
 
@@ -137,24 +134,22 @@ MatrixXd MNQ::Nold()
     EXf Ev;
     vector<double> arr; 
     arr = Ev.Val(1, "./Data./PhyChar.csv");
-	double A = arr[0];//截面面积 A
-	double rho = arr[1];//介质密度
-	double d0 = arr[2];//带缆直径 d0
-    double E = arr[3];//弹性模量 E
+	double A = arr[0];
+	double rho = arr[1];
+	double d0 = arr[2];
+    double E = arr[3];
 	double I = arr[4];
-    // double MNQ::Ip = 2.80e-7;
-    // double MNQ::G = 8.11e9;
 
-    //数学特性
+    
     double pi = arr[11];
     double g = arr.back();
 
-    //质量特性
-    double M = arr[5];//质量 M = Rhocable*A
-    double ma = arr[6];//附加质量 ma = rho*A*(Cm)  此时Cm = 1.00
+
+    double M = arr[5];
+    double ma = arr[6];
     double Cdt = arr[7];
     double Cdn = arr[8];
-    double Cdb = arr[9];//待修改
+    double Cdb = arr[9];
     double w0 = arr[12];
 
     MatrixXd AA(500, 500);
@@ -185,24 +180,20 @@ MatrixXd MNQ::Nnew()
     EXf Ev;
     vector<double> arr; 
     arr = Ev.Val(1, "./Data./PhyChar.csv");
-	double A = arr[0];//截面面积 A
-	double rho = arr[1];//介质密度
-	double d0 = arr[2];//带缆直径 d0
-    double E = arr[3];//弹性模量 E
+	double A = arr[0];
+	double rho = arr[1];
+	double d0 = arr[2];
+    double E = arr[3];
 	double I = arr[4];
-    // double MNQ::Ip = 2.80e-7;
-    // double MNQ::G = 8.11e9;
 
-    //数学特性
     double pi = arr[11];
     double g = arr.back();
 
-    //质量特性
-    double M = arr[5];//质量 M = Rhocable*A
-    double ma = arr[6];//附加质量 ma = rho*A*(Cm)  此时Cm = 1.00
+    double M = arr[5];
+    double ma = arr[6];
     double Cdt = arr[7];
     double Cdn = arr[8];
-    double Cdb = arr[9];//待修改
+    double Cdb = arr[9];
     double w0 = arr[12];
 
     MatrixXd AA(500, 500);
@@ -223,8 +214,6 @@ MatrixXd MNQ::Nnew()
         temp(i*10 + 9, i*10 + 6) = -cos(Ynew(i*10 + 7));
     }
 
-    // savetxt(temp, "./Data./Nnew.txt");
-
     return temp;
 }
 
@@ -234,29 +223,20 @@ VectorXd MNQ::Qold()
     EXf Ev;
     vector<double> arr; 
     arr = Ev.Val(1, "./Data./PhyChar.csv");
-	double A = arr[0];//截面面积 A
-	double rho = arr[1];//介质密度
-	double d0 = arr[2];//带缆直径 d0
-    double E = arr[3];//弹性模量 E
+	double A = arr[0];
+	double rho = arr[1];
+	double d0 = arr[2];
+    double E = arr[3];
 	double I = arr[4];
-    // double MNQ::Ip = 2.80e-7;
-    // double MNQ::G = 8.11e9;
-
-    //数学特性
     double pi = arr[11];
     double g = arr.back();
-
-    //质量特性
-    double M = arr[5];//质量 M = Rhocable*A
-    double ma = arr[6];//附加质量 ma = rho*A*(Cm)  此时Cm = 1.00
+    double M = arr[5];
+    double ma = arr[6];
     double Cdt = arr[7];
     double Cdn = arr[8];
-    double Cdb = arr[9];//待修改
+    double Cdb = arr[9];
     double w0 = arr[12];
-   
-   
     VectorXd temp(500);
-
     for(int i = 0; i < 50; i++)
     {
         temp(i*10 + 0) = Yold(i*10 + 9)*Yold(i*10 + 4) - Yold(i*10 + 8)*Yold(i*10 + 5) + w0*cos(Yold(i*10 + 7))*cos(Yold(i*10 + 6)) + 0.5*Cdt*d0*rho*Yold(i*10 + 0)*pi*fabs(Yold(i*10 + 0))*sqrt(Yold(i*10 + 3)/(A*E) + 1);
@@ -270,10 +250,7 @@ VectorXd MNQ::Qold()
         temp(i*10 + 8) = Yold(i*10 + 8);
         temp(i*10 + 9) = Yold(i*10 + 9);
     }
-
-
-    return temp;
-    
+    return temp;   
 }
 
 VectorXd MNQ::Qnew()
@@ -282,28 +259,20 @@ VectorXd MNQ::Qnew()
     EXf Ev;
     vector<double> arr; 
     arr = Ev.Val(1, "./Data./PhyChar.csv");
-	double A = arr[0];//截面面积 A
-	double rho = arr[1];//介质密度
-	double d0 = arr[2];//带缆直径 d0
-    double E = arr[3];//弹性模量 E
+	double A = arr[0];
+	double rho = arr[1];
+	double d0 = arr[2];
+    double E = arr[3];
 	double I = arr[4];
-    // double MNQ::Ip = 2.80e-7;
-    // double MNQ::G = 8.11e9;
-
-    //数学特性
     double pi = arr[11];
     double g = arr.back();
-
-    //质量特性
-    double M = arr[5];//质量 M = Rhocable*A
-    double ma = arr[6];//附加质量 ma = rho*A*(Cm)  此时Cm = 1.00
+    double M = arr[5];
+    double ma = arr[6];
     double Cdt = arr[7];
     double Cdn = arr[8];
-    double Cdb = arr[9];//待修改
+    double Cdb = arr[9];
     double w0 = arr[12];
-
     VectorXd temp(500);
-
    for(int i = 0; i < 50; i++)
     {
         temp(i*10 + 0) = Ynew(i*10 + 9)*Ynew(i*10 + 4) - Ynew(i*10 + 8)*Ynew(i*10 + 5) + w0*cos(Ynew(i*10 + 7))*cos(Ynew(i*10 + 6)) + 0.5*Cdt*d0*rho*Ynew(i*10 + 0)*pi*fabs(Ynew(i*10 + 0))*sqrt(Ynew(i*10 + 3)/(A*E) + 1);
@@ -317,10 +286,6 @@ VectorXd MNQ::Qnew()
         temp(i*10 + 8) = Ynew(i*10 + 8);
         temp(i*10 + 9) = Ynew(i*10 + 9);
     }
-
-
-    // savetxt(temp, "./Data./Qnew.txt");
-
     return temp;
 
     

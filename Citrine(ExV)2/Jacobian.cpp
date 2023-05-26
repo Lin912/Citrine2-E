@@ -1,8 +1,8 @@
 /*
  * @Author: Lyn
  * @Date: 2022-06-27 19:59:06
- * @LastEditors: error: git config user.name && git config user.email & please set dead value or install git
- * @LastEditTime: 2022-12-09 18:02:19
+ * @LastEditors: Lyn 18340802816@163.com
+ * @LastEditTime: 2023-05-26 21:53:20
  * @FilePath: \test1tt\Jacobian.cpp
  * @Citrine
  */
@@ -24,7 +24,6 @@ Jacobian::Jacobian(VectorXd& arr, VectorXd& brr)
 
 Jacobian::~Jacobian()
 {
-    // cout << "Jacobian is read in !!" << endl;
 
 }
 
@@ -42,32 +41,24 @@ MatrixXd Jacobian::jacobian(int k)
     EXf Ev;
     vector<double> crr; 
     crr = Ev.Val(1, "./Data./PhyChar.csv");
-	double A = crr[0];//截面面积 A
-	double rho = crr[1];//介质密度
-	double d0 = crr[2];//带缆直径 d0
-    double E = crr[3];//弹性模量 E
+	double A = crr[0];
+	double rho = crr[1];
+	double d0 = crr[2];
+    double E = crr[3];
 	double I = crr[4];
-    // double MNQ::Ip = 2.80e-7;
-    // double MNQ::G = 8.11e9;
-
-    //数学特性
     double pi = crr[11];
-    double g = crr.back();
-
-    //质量特性
-    double M = crr[5];//质量 M = Rhocable*A
-    double ma = crr[6];//附加质量 ma = rho*A*(Cm)  此时Cm = 1.00
+    double g = crr.back(); 
+    double M = crr[5];
+    double ma = crr[6];
     double Cdt = crr[7];
     double Cdn = crr[8];
-    double Cdb = crr[9];//待修改
+    double Cdb = crr[9];
     double w0 = crr[12];
-
-
     EXf a;
     vector<double> arr; 
     arr = a.Val(k, "./Data./input.csv");
-	double V1 = arr[0];             //Velocity of water
-	double V2 = arr[1];
+	double V1 = arr[0];
+    double V2 = arr[1];            
 	double V3 = arr[2];
     double Sd = arr[8];
 	double G = arr.back();
@@ -133,8 +124,6 @@ MatrixXd Jacobian::jacobian(int k)
     temp(4, 8) = 0;
     temp(4, 9) = 1;
     
-
-    //BC49
     temp(495, 490) = 0;
     temp(495, 491) = 0;
     temp(495, 492) = 0;
@@ -189,11 +178,7 @@ MatrixXd Jacobian::jacobian(int k)
     temp(499, 497) = 0;
     temp(499, 498) = 0;
     temp(499, 499) = 1;   
-
-
-    
-
-    //Block01    
+   
     for(int i = 0; i < 49; i++)
     {
         temp(i*10 + 5, i*10 + 0) = (2*M)*deltaS + (0.5*Cdt*d0*rho*pi*fabs(Ynew(i*10 + 0))*sqrt(Ynew(i*10 + 3)/(A*E) + 1) + 0.5*Cdt*d0*rho*Ynew(i*10 + 0)*pi*judg(Ynew(i*10 + 0))*sqrt(Ynew(i*10 + 3)/(A*E) + 1))*deltaS*deltaT;
@@ -272,7 +257,6 @@ MatrixXd Jacobian::jacobian(int k)
 
     }
 
-    //Block02
     for(int i = 0; i < 49; i++)
     {
         temp(i*10 + 5, i*10 + 10) = (2*M)*deltaS + (0.5*Cdt*d0*rho*pi*fabs(Ynew(i*10 + 10))*sqrt(Ynew(i*10 + 13)/(A*E) + 1) + 0.5*Cdt*d0*rho*Ynew(i*10 + 10)*pi*judg(Ynew(i*10 + 10))*sqrt(Ynew(i*10 + 13)/(A*E) + 1))*deltaS*deltaT;
@@ -352,10 +336,6 @@ MatrixXd Jacobian::jacobian(int k)
         temp(i*10 + 14, i*10 + 19) = deltaS*deltaT;
 
     }
-
-
-    //Orgin JacobianMatrix 
-
     return temp;
 
 }

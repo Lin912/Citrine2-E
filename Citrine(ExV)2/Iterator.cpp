@@ -20,11 +20,10 @@ Iterator::Iterator (VectorXd& arr, VectorXd& brr, int a, double b)
     Ynew = brr;
 
 
-    times = a;//最大迭代次数
-    Error = b;//迭代误差
+    times = a;
+    Error = b;
 
     cout << endl;
-    // cout << "Newton Iteration strated !!" << endl;
     cout << "Now the Maximum Iteration TIMES is " << times << endl;
     cout << "Now the Maximum Allowable Iteration ERROR is " << Error << endl << endl;
 
@@ -38,56 +37,30 @@ Iterator::~Iterator ()
 void Iterator::begin (int k)
 {
 
-     //********************************************//修剪
+
     Add bc(Yold, Ynew);
     Yold = bc.Addyold(k);
     Ynew = bc.Addynew(k);
-    //********************************************//
-
-    //*******************************************//装载
     Load load(Yold, Ynew);    
-    fx = load.LF(k);//装载 F(x)
-    jac = load.LJ(k);//装载 Jacobi(x)
-
-    // savetxt(jac, "./Data./loadjac.txt");                //Jacobian输出项，节点的v和w不能同时为0
-    //*******************************************//
-
-
-
-    VectorXd temp;//用于输出[delta Y]
+    fx = load.LF(k);
+    jac = load.LJ(k);
+    VectorXd temp;
     VectorXd deltaY;
 
     for(int i = 0; i < times; i++)
     {
         
-        
-        //*************************************************************//记步单元
-            cout << "Iterator " << i + 1 << " times; " << endl;
-        //***************************************************************//
-
-
-        //*************************************************//求解单元
-        double Lambda = 0.5;               //牛顿下山因子(对半取值)
-
-        deltaY = jac.inverse() * fx * (-1) * Lambda;//主要求解单元
-
+        cout << "Iterator " << i + 1 << " times; " << endl;
+        double Lambda = 1.0;
+        deltaY = jac.inverse() * fx * (-1) * Lambda;
         temp = Ynew;
-        Ynew += deltaY;//更新单元
-        Yold = temp;
-        
+        Ynew += deltaY;
+        Yold = temp;   
         savetxt(fx, "./Data./fx.txt");
         savetxt(deltaY, "./Data./deltaY.txt");
-
-        //**************************************************//        
-
-
-
-
-        //**************************************************//误差计算单元
-        // Error 01: （增量比值判断）
-        double a;//单步最大误差
+        double a;
         double amax = 0;
-        for(int i = 10; i < 489; i++)//单步最大误差
+        for(int i = 10; i < 489; i++)
         {
             if(Yold(i) != 0)
             {
@@ -104,33 +77,22 @@ void Iterator::begin (int k)
                 }
             }
         }
-        cout << "now Max.incremental Percentage is :   " << amax << endl;//残差输出
-
-
-
-        //Error 02: (fx 趋零判断)
+        cout << "now Max.incremental Percentage is :   " << amax << endl;
         double b;
         double bmax = 0;
         for(int  i = 10; i < 489; i++)
         {
             b = abs(fx(i));
-
             if(bmax > b)
             {
-
             }
             else
             {
                 bmax = b;
-                // cout << "now i: " << i << "     and bmax is " << bmax <<endl;
             }
 
         }
-        cout << "now Fx(abs) is :   " << bmax << endl << endl;//残差输出
-        //******************************************************//
-
-
-        //******************************************************//误差输出及重新装载单元（待修改）
+        cout << "now Fx(abs) is :   " << bmax << endl << endl;
         double aError = 0.001;
         double bError = 0.00001;
 
@@ -142,29 +104,20 @@ void Iterator::begin (int k)
         else
         {
 
-            //**************************************************//边界条件装载单元
-            Add tempAdd(Yold, Ynew);//边界条件装载增加
+            Add tempAdd(Yold, Ynew);
             Yold = tempAdd.Addyold(k);
             Ynew = tempAdd.Addynew(k);
 
             savetxt(Ynew, "./Data./Ynew.txt");
-            //******************************************************//
-
             Load templd(Yold, Ynew);
             fx = templd.LF(k);
             jac = templd.LJ(k);   
 
-            //**************************************************//边界条件装载单元
-            BC tempbc(Yold, Ynew);//边界条件装载修剪
+            BC tempbc(Yold, Ynew);
             Yold = tempbc.yold();
             Ynew = tempbc.ynew();
-            //******************************************************//
 
         }
-        //**********************************************************//
-
- 
-
     }
 
 }

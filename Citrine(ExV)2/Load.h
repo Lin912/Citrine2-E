@@ -20,8 +20,8 @@ using namespace Eigen;
 class Load
 {
 private:
-    VectorXd Yold;//用于存储临时Yold
-    VectorXd Ynew;//用于存储临时Ynew
+    VectorXd Yold;
+    VectorXd Ynew;
 
 
 public:

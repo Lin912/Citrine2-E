@@ -26,7 +26,7 @@ VectorXd BC::yold()
 {
     VectorXd temp(500);
 
-    VectorXd point0(10);//零号边界点
+    VectorXd point0(10);
     point0(0) = Yold(0);
     point0(1) = Yold(1);
     point0(2) = Yold(2);
@@ -38,7 +38,7 @@ VectorXd BC::yold()
     point0(8) = Yold(8);
     point0(9) = Yold(9);
 
-    VectorXd point10(10);//尾号边界点
+    VectorXd point10(10);
     point10(0) = Yold(490);
     point10(1) = Yold(491);
     point10(2) = Yold(492);
@@ -61,7 +61,7 @@ VectorXd BC::ynew()
 {
     VectorXd temp(500);
 
-    VectorXd point0(10);//零号边界点
+    VectorXd point0(10);
     point0(0) = Ynew(0);
     point0(1) = Ynew(1);
     point0(2) = Ynew(2);
@@ -73,7 +73,7 @@ VectorXd BC::ynew()
     point0(8) = Ynew(8);
     point0(9) = Ynew(9);
 
-    VectorXd point10(10);//尾号边界点
+    VectorXd point10(10);
     point10(0) = Ynew(490);
     point10(1) = Ynew(491);
     point10(2) = Ynew(492);

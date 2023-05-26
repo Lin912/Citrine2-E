@@ -23,14 +23,14 @@ using namespace Eigen;
 class Iterator
 {
         private:
-            int times;//Iteartion Times
-		    double Error;//Convergence Error
+            int times;
+		    double Error;
 
-            VectorXd fx;//类存储fx
-            MatrixXd jac;//类存储jac
+            VectorXd fx;
+            MatrixXd jac;
 
-            VectorXd Yold;//临时存储Yold
-            VectorXd Ynew;//临时存储Ynew
+            VectorXd Yold;
+            VectorXd Ynew;
 
         public:
             Iterator (VectorXd& arr, VectorXd& brr, int a, double b);
