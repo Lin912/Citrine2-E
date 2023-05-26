@@ -1,11 +1,3 @@
-/*
- * @Author: Lyn
- * @Date: 2022-06-01 21:49:23
- * @LastEditors: error: git config user.name && git config user.email & please set dead value or install git
- * @LastEditTime: 2022-11-30 21:06:59
- * @FilePath: \test1\MNQ.cpp
- * @Citrine
- */
 #include <vector>
 #include "MNQ.h"
 #include "EXf.h"

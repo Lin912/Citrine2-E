@@ -2,7 +2,7 @@
  * @Author: Lyn
  * @Date: 2022-05-26 17:54:40
  * @LastEditors: Lyn 18340802816@163.com
- * @LastEditTime: 2023-05-26 21:58:57
+ * @LastEditTime: 2023-05-26 22:24:23
  * @FilePath: \test1\main.cpp
  */
 
@@ -19,15 +19,11 @@
 using namespace std;
 using namespace Eigen;
 
-void  getArrCol(Matrix<double,500,1> &arr_col,int index, string file) // index 读取第多少行的列向量 , file 待读取的文件名 
+void  getArrCol(Matrix<double,500,1> &arr_col,int index, string file)
 {
   ifstream infile(file, ios::in);
     if (!infile)
-    {
-      cout << "打开文件夹" + file + "失败" << endl;
-      exit(1);
-    }
-
+    {exit(1);}
     string line;
     string field;
     for (int i = 0; i <=index; i++)
@@ -55,20 +51,6 @@ int main()
     double DelTime = 0.01;                               
     VectorXd a(TV);
     a.Zero(TV);
-    for(int i = 0; i < Nodes; i++)
-    {
-      a(i*10 + 0) = 0;    
-      a(i*10 + 1) = 0.002;   
-      a(i*10 + 2) = 0;    
-      a(i*10 + 3) = 0;  
-      a(i*10 + 4) = 0;    
-      a(i*10 + 5) = 0;    
-      a(i*10 + 6) = 0.00001;   
-      a(i*10 + 7) = 0.00001;   
-      a(i*10 + 8) = 0.00001;   
-      a(i*10 + 9) = 0.00001;  
-    }
-      a(493) = 3480.0;
     MatrixXd Mcsv(TimeStep, TV);                                 
     Mcsv.Zero(TimeStep, TV);  
     

@@ -25,7 +25,7 @@ class Jacobian
         Jacobian(VectorXd& arr, VectorXd& brr);
         ~Jacobian();
 
-        int judg(double a); //判断符号正负
+        int judg(double a);
         
         MatrixXd jacobian(int k);
 

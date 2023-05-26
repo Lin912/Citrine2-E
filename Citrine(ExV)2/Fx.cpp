@@ -1,8 +1,8 @@
 /*
  * @Author: Lyn
  * @Date: 2022-05-31 18:56:38
- * @LastEditors: error: git config user.name && git config user.email & please set dead value or install git
- * @LastEditTime: 2022-12-09 18:02:49
+ * @LastEditors: Lyn 18340802816@163.com
+ * @LastEditTime: 2023-05-26 22:21:36
  * @FilePath: \test1\Fx.cpp
  * @Citrine
  */
@@ -25,8 +25,6 @@ Fx::Fx(VectorXd& arr, VectorXd& brr)
 
 Fx::~Fx()
 {
-    //  cout << "Function is read in!!" << endl;
-
 }
 
 
@@ -789,7 +787,7 @@ VectorXd Fx::fx(int k)
     VectorXd Q49new(10);
 
 
-    Q0old = AA.Qold().head(10);//分块赋值
+    Q0old = AA.Qold().head(10);
     Q1old = AA.Qold().segment(10, 10);
     Q2old = AA.Qold().segment(20, 10);
     Q3old = AA.Qold().segment(30, 10);
@@ -840,7 +838,7 @@ VectorXd Fx::fx(int k)
     Q48old = AA.Qold().segment(480, 10);
     Q49old = AA.Qold().tail(10);
 
-    Q0new = AA.Qnew().head(10);//分块赋值
+    Q0new = AA.Qnew().head(10);
     Q1new = AA.Qnew().segment(10, 10);
     Q2new = AA.Qnew().segment(20, 10);
     Q3new = AA.Qnew().segment(30, 10);
@@ -1009,8 +1007,8 @@ VectorXd Fx::fx(int k)
     BCtemp0(3) = Y0new(8);
     BCtemp0(4) = Y0new(9);
     BCtemp1(0) = Y49new(3) + G*cos(Y49new(7))*cos(Y49new(6));
-    BCtemp1(1) = Y49new(4) - G*sin(Y49new(6)) + 0.5*rho*Cdn*Sd*Y49new(1)*sqrt(pow(Y49new(1),2)+pow(Y49new(2),2));
-    BCtemp1(2) = Y49new(5) - G*cos(Y49new(6))*sin(Y49new(7))+ 0.5*rho*Cdn*Sd*Y49new(2)*sqrt(pow(Y49new(1),2)+pow(Y49new(2),2));
+    BCtemp1(1) = Y49new(4) - G*sin(Y49new(6));
+    BCtemp1(2) = Y49new(5) - G*cos(Y49new(6));
     BCtemp1(3) = Y49new(8);
     BCtemp1(4) = Y49new(9);
 

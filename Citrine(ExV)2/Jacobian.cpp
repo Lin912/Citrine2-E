@@ -2,7 +2,7 @@
  * @Author: Lyn
  * @Date: 2022-06-27 19:59:06
  * @LastEditors: Lyn 18340802816@163.com
- * @LastEditTime: 2023-05-26 21:53:20
+ * @LastEditTime: 2023-05-26 22:23:17
  * @FilePath: \test1tt\Jacobian.cpp
  * @Citrine
  */
@@ -314,7 +314,6 @@ MatrixXd Jacobian::jacobian(int k)
         temp(i*10 + 9, i*10 + 17) = -E*I*Ynew(i*10 + 18)*Ynew(i*10 + 19)*(pow(tan(Ynew(i*10 + 17)),2) + 1)*deltaS*deltaT;
         temp(i*10 + 11, i*10 + 17) = (sin(Ynew(i*10 + 17))*(Ynew(i*10 + 13)/(A*E) + 1)*(Yold(i*10 + 16) - Ynew(i*10 + 16)))*deltaS-(Ynew(i*10 + 19)*Ynew(i*10 + 12)*(pow(tan(Ynew(i*10 + 17)),2) + 1))*deltaS*deltaT;
         temp(i*10 + 12, i*10 + 17) = (Ynew(i*10 + 13)/(A*E) + Yold(i*10 + 13)/(A*E) + 2)*deltaS -(Ynew(i*10 + 19)*Ynew(i*10 + 11)*(pow(tan(Ynew(i*10 + 17)),2) + 1))*deltaS*deltaT;
-        temp(i*10 + 13, i*10 + 17) = -2*deltaT;
         temp(i*10 + 14, i*10 + 17) = -(sin(Ynew(i*10 + 17))*(Ynew(i*10 + 6) - Ynew(i*10 + 16)))*deltaT;
 
         temp(i*10 + 5, i*10 + 18) = -Ynew(i*10 + 15)*deltaS*deltaT;
@@ -322,7 +321,6 @@ MatrixXd Jacobian::jacobian(int k)
         temp(i*10 + 8, i*10 + 18) = (2*E*I)*deltaT;
         temp(i*10 + 9, i*10 + 18) = -E*I*Ynew(i*10 + 19)*tan(Ynew(i*10 + 17))*deltaS*deltaT;
         temp(i*10 + 10, i*10 + 18) = -Ynew(i*10 + 12)*deltaS*deltaT;
-        temp(i*10 + 12, i*10 + 18) = -Ynew(i*10 + 10)*deltaS*deltaT;
         temp(i*10 + 13, i*10 + 18) = deltaS*deltaT;
 
         temp(i*10 + 5, i*10 + 19) = Ynew(i*10 + 14)*deltaS*deltaT;
