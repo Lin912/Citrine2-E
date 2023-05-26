@@ -2,7 +2,7 @@
  * @Author: Lyn
  * @Date: 2022-05-26 17:54:40
  * @LastEditors: Lyn 18340802816@163.com
- * @LastEditTime: 2023-05-26 21:55:30
+ * @LastEditTime: 2023-05-26 21:58:57
  * @FilePath: \test1\main.cpp
  */
 
@@ -80,7 +80,7 @@ int main()
         cout << endl;
         cout << "Time Step : " << i << "     Now the real time is " << i*DelTime << "s";
         
-      if(i < Times)
+      if(i > 0)
         {
           getArrCol(ans, i-1, "./Data./out.csv");
           for(int i = 0; i < TV; i++)
