@@ -1,0 +1,37 @@
+test 1(Convergence):
+
+    Times = 5550;                                               //迭代次数
+    Error = 0.001;                                              //迭代误差
+    Nodes = 50;
+    variable = 10;
+    TV = 500;                                                   //总变量数TV= Nodes * variable
+    TimeStep = 1000;                                            //总时间步数
+    DeltaTime = 0.001;                                          //时间步长(用于查看真实时间)
+    DeltaS = 0.13;
+    
+    InitialValue:
+    for(int i = 0; i < Nodes; i++)
+    {
+      a(i*10 + 0) = 0;    //u
+      a(i*10 + 1) = 0.00000000001;    //v
+      a(i*10 + 2) = 0;    //w
+
+      a(i*10 + 3) = 10;   //T
+      a(i*10 + 4) = 0;    //Sn
+      a(i*10 + 5) = 0;    //Sb
+
+      a(i*10 + 6) = 0;    //Phi
+      a(i*10 + 7) = 0;    //Theta
+
+      a(i*10 + 8) = 0.1;    //O2mega
+      a(i*10 + 9) = 0.1;    //O3mega
+    }
+
+    ExternalEnvironment:
+    for(int i = 0; i < TimeStep; i++)
+    {
+        b(i, 0) = 0;
+        //b(i, 1) = 0.2 * pi *cos(pi * i * DelTime);
+        b(i, 1) = (i + 1) * 0.001;
+        b(i, 10) = 3.489;
+    }
